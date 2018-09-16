@@ -28,12 +28,10 @@ int main(int argc, const char * argv[]) {
             NSLog(@"%@", string);
         }
         
-        // create an instance of BNRItem, set some instance variables and log its description to the console
-        BNRItem *item = [[BNRItem alloc] init];
-        
-        item.itemName = @"Red Sofa";
-        item.serialNumber = @"A1B2C";
-        item.valueInDollars = 100;
+        // create an instance of BNRItem using the designated initilizer and log its description to the console
+        BNRItem *item = [[BNRItem alloc] initWithItemName:@"Red Sofa"
+                                           valueInDollars:100
+                                             serilaNumber:@"A1B2C"];
         
         NSLog(@"%@", item);
         

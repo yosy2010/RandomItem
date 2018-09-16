@@ -19,6 +19,15 @@
 }
 
 // methods
+// initilizers:
+// designated initilizer:
+-(instancetype) initWithItemName: (NSString *) itemName
+          valueInDollars: (int) valueInDollars
+            serilaNumber: (NSString *) serialNumber;
+// another initilizer:
+-(instancetype) initWithItemName: (NSString *) itemName;
+
+// accessors
 -(void) setItemName: (NSString *) name;
 -(NSString *) itemName;
 
@@ -29,5 +38,7 @@
 -(int) valueInDollars;
 
 -(NSDate *) dateCreated;
+
+
 
 @end
