@@ -18,7 +18,11 @@
     NSDate *_dateCreated;
 }
 
-// methods
+// methods:
+// class methods:
++(instancetype) randomItem;
+
+// instance methods:
 // initilizers:
 // designated initilizer:
 -(instancetype) initWithItemName: (NSString *) itemName
