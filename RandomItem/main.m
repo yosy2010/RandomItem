@@ -33,7 +33,13 @@ int main(int argc, const char * argv[]) {
                                            valueInDollars:100
                                              serilaNumber:@"A1B2C"];
         
+        // test the other two initilizers
+        BNRItem *itemTwo = [[BNRItem alloc] initWithItemName:@"Blue Sofa"];
+        BNRItem *itemThree = [[BNRItem alloc] init];
+        
         NSLog(@"%@", item);
+        NSLog(@"%@", itemTwo);
+        NSLog(@"%@", itemThree);
         
         // destroy the NSMutableArray object
         items = nil;
