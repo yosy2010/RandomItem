@@ -80,40 +80,11 @@
     return [self initWithItemName:@"Item"];
 }
 
-// accessors
-- (void)setItemName:(NSString *)name
+// override set method for containedItem
+- (void)setContainedItem:(BNRItem *)containedItem
 {
-    _itemName = name;
-}
-
-- (NSString *)itemName
-{
-    return _itemName;
-}
-
-- (void)setSerialNumber:(NSString *)serialNumber
-{
-    _serialNumber = serialNumber;
-}
-
-- (NSString *)serialNumber
-{
-    return _serialNumber;
-}
-
-- (void)setValueInDollars:(int)valueInDollars
-{
-    _valueInDollars = valueInDollars;
-}
-
-- (int)valueInDollars
-{
-    return _valueInDollars;
-}
-
-- (NSDate *)dateCreated
-{
-    return _dateCreated;
+    _containedItem = containedItem;
+    self.containedItem.container = self;
 }
 
 - (NSString *)description
@@ -121,7 +92,10 @@
     return [NSString stringWithFormat:@"%@ (%@): worth $%d, recorded on %@", self.itemName, self.serialNumber, self.valueInDollars, self.dateCreated];
 }
 
-
+- (void)dealloc
+{
+    NSLog(@"Destoied: %@", self);
+}
 
 @end
 

@@ -15,20 +15,24 @@ int main(int argc, const char * argv[]) {
         // create NSMutableArray
         NSMutableArray *items = [[NSMutableArray alloc] init];
         
-        // create 10 random items and add them to the array
-        for (int i = 0; i < 10; i++) {
-            
-            // create a new random instance of BNRItem
-            BNRItem *item = [BNRItem randomItem];
-            
-            // add it to the array of items
-            items[i] = item;
-        }
+        BNRItem *backPack = [[BNRItem alloc] initWithItemName:@"BackPack"];
+        [items addObject:backPack];
+        
+        BNRItem *calculator = [[BNRItem alloc] initWithItemName:@"Calculator"];
+        [items addObject:calculator];
+        
+        backPack.containedItem = calculator;
+        
+        backPack = nil;
+        calculator = nil;
         
         // now log all the random items
         for (BNRItem *item in items) {
             NSLog(@"%@", item);
         }
+        
+        // setting items to nil
+        NSLog(@"setting items to nil");
         
         // destroy the NSMutableArray object
         items = nil;
